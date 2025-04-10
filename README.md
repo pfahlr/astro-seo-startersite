@@ -4,18 +4,18 @@ The purpose of this "theme" is to provide a starting point and framework to faci
 
 So far we have:
 
-[ ] - all images are run through an optimization function where they are converted to webp
-[ ] - blogs and podcasts generate rss feeds
+- [ ] - all images are run through an optimization function where they are converted to webp
+- [ ] - blogs and podcasts generate rss feeds
 
 
 TODO
-[ ] - ensure all meta tags are implemented
-[ ] - ensure all social tags and social card images are generated 
-[ ] - add a css framework and clean up markup
-[ ] - provide documentation to best configure cloudflare
-[ ] - provide documentation to guide content writers
+- [ ] - ensure all meta tags are implemented
+- [ ] - ensure all social tags and social card images are generated 
+- [ ] - add a css framework and clean up markup
+- [ ] - provide documentation to best configure cloudflare
+- [ ] - provide documentation to guide content writers
 ...
-[ ] - complete this list against multiple SEO checklist sites
+- [ ] - complete this list against multiple SEO checklist sites
 
 
 
