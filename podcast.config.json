@@ -1,0 +1,24 @@
+
+{
+  "copyright": "",
+  "theme": "light",
+  "fundingText": "",
+  "author": "PODCAST AUTHOR HERE",
+  "name": "PODCAST TITLE HERE",
+  "banner": "/banner.webp",
+  "pageSize": 15,
+  "fundingUrl": "",
+  "owner": "",
+  "favicon": "/favicon.svg",
+  "explicit": false,
+  "cover": "/cover.jpg",
+  "language": "en",
+  "link": "https://example.com/podcast",
+  "email": "contact@example.com",
+  "description": "PODCAST DESCRIPTION HERE",
+  "category": [
+    "Technology",
+    "Business"
+  ],
+  "feedSize": ""
+}

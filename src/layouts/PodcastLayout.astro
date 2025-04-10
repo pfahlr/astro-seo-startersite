@@ -1,0 +1,28 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import podcastConfig from "../../podcast.config.json";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import EpisodeCard from "../components/EpisodeCard.astro";
+const { title, explicit, pubDate, cover, desc, url, audioUrl, duration, index, episode, season} = Astro.props;
+dayjs.extend(localizedFormat);
+---
+<BaseHead  title=`${title} E${episode}S${season} | ${podcastConfig.name} | ${SITE_TITLE}`  description={SITE_DESCRIPTION}/>
+<Header/>	
+  <EpisodeCard
+  title={title} 
+  cover={cover}
+  desc={desc}
+  url={url}
+  audioUrl={audioUrl}
+  pubDate={pubDate}
+  duration={duration}
+  explicit={explicit}
+  season={season}
+	episode={episode}
+  id={"card-" + index}
+/>
+<Footer/>

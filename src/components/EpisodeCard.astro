@@ -1,0 +1,31 @@
+---
+const { title, cover, desc, url, audioUrl, id, pubDate, duration, explicit, episode, season } = Astro.props;
+import podcastConfig from "../../podcast.config.json";
+import MediaEnclosure from "../components/MediaEnclosure.astro";
+import formatTime  from "../modules/field_formatter.js";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+dayjs.extend(localizedFormat);
+
+let coverURL = cover ? cover : podcastConfig.cover;
+const dateFormatted = dayjs(pubDate).format("ll");
+const durationFormatted = formatTime(duration);
+
+const epidodeInfoClasses = "episode-info" + " " + (explicit ? "episode-explicit" : "");
+---
+<article class=`episode-card e${episode}s${season}`>
+  <section class="cover-image">
+    <img src={coverURL} alt={title} class="" />
+  </section>
+  <section class={epidodeInfoClasses}>
+    <a href={url} class="episode-link">
+      <h2 class="episode-title">{title}</h2>
+    </a>
+    <div class="epidsode-date"><strong>published date: </strong>{dateFormatted}</div>
+    <div class="epidsode-duration"><strong>duration: </strong>{durationFormatted} </div>
+    <div class="episode-description">{desc}</div>
+  </section>
+  <section class="episode-enclosure" >
+     <MediaEnclosure audioUrl={audioUrl} id={id} />
+  </section>
+</article>

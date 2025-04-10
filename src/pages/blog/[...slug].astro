@@ -1,6 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import { optimizeImage } from '../../utils/imageProcessor';
+
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -13,6 +15,11 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
+
+if(post.data.heroImage) {
+	post.data.heroImage = await optimizeImage(post.data.heroImage);
+}
+
 const { Content } = await render(post);
 ---
 

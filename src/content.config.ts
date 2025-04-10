@@ -15,4 +15,22 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+
+const podcast = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    audioUrl: z.string(),
+    pubDate: z.coerce.date(),
+    cover: z.string().optional(),
+    explicit: z.boolean().optional(),
+    episode: z.number().optional(),
+    season: z.number().optional(),
+    episodeType: z.string().optional(),
+    duration: z.coerce.string(), //duration in format hh:mm:ss
+    size: z.number(), // size in megabytes
+    })
+});
+
+
+export const collections = { blog, podcast };

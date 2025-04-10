@@ -3,12 +3,34 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { optimizeImage } from '../../utils/imageProcessor';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+let processedPosts:any = [];
+//optimizeImage is an async function, so it must be called with await, which can only
+//be done in an async function
+async function preprocessPosts(posts) {
+    for (const post of posts) {
+    if (post.data.heroImage) {
+      post.data.heroImage = await optimizeImage(post.data.heroImage);
+    }
+  }
+	return posts;
+}
+
+//and we must await here because we fired off a whole list of async functions
+//and they will most certainly not return immediately after the call. which
+//is exactly why when await is used inside a function that function must be 
+//asynchronous. Because all the way at the top, there must be one final await.
+//it's somewhat like recursion, but also in parallel. or whatever, that's how
+//I can think about it. 
+
+processedPosts = await preprocessPosts(posts); 
 ---
 
 <!doctype html>
@@ -91,7 +113,7 @@ const posts = (await getCollection('blog')).sort(
 			<section>
 				<ul>
 					{
-						posts.map((post) => (
+						processedPosts.map((post) => (
 							<li>
 								<a href={`/blog/${post.id}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
