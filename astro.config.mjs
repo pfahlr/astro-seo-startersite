@@ -1,10 +1,12 @@
 // @ts-check
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import remarkWebp from './src/plugins/remark-webp.js';
 import cloudflare from '@astrojs/cloudflare';
-import tailwindcss from '@tailwindcss/vite';
+
+
 import { SITE_URL } from './src/consts';
 
 // https://astro.build/config

@@ -1,11 +1,9 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
 import EpisodeCard from '../../components/EpisodeCard.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import podcastConfig from "../../../podcast.config.json";
+import { SITE_TITLE, SITE_DESCRIPTION, PODCAST_DESCRIPTION, PODCAST_KEYWORDS} from '../../consts';
 import { htmlToText } from 'html-to-text';
 import { optimizeImage } from '../../utils/imageProcessor';
 
@@ -20,7 +18,6 @@ const episodes = (await getCollection('podcast')).sort(
 async function preprocessPosts(posts) {
     for (const post of posts) {
     if (post.data.cover) {
-
       post.data.cover = await optimizeImage(post.data.cover);
     }
   }
@@ -28,14 +25,17 @@ async function preprocessPosts(posts) {
 }
 
 processedEpisodes = await preprocessPosts(episodes); 
-
+let data = {
+	'title':` ${podcastConfig.name} | ${SITE_TITLE}`,
+	'description': PODCAST_DESCRIPTION,
+	'keywords': PODCAST_KEYWORDS
+}
 
 ---
-<BaseHead title=` ${podcastConfig.name} | ${SITE_TITLE}` description={SITE_DESCRIPTION} />
-<Header />
-<main>
-<h2>{podcastConfig.name}</h2>
-<section id="blog-posts" class="blog-posts">
+<Layout data={data}>	
+  <main>
+  <h2>{podcastConfig.name}</h2>
+  <section id="podcast-episodes" class="podcast-episodes">
 		{
 			processedEpisodes.map((episode) => (
 			<EpisodeCard
@@ -51,4 +51,4 @@ processedEpisodes = await preprocessPosts(episodes);
 			))
 		}
 </section>
-<Footer />
+</Layout>

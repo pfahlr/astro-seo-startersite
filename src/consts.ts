@@ -7,13 +7,19 @@ export const SOCIAL_MEDIA = [{platform:"X", url:"https://x.com/pfahlr", cssicon:
   {platform:"RickPfahl.com", url:"http://rickpfahl.com", cssicon:"web"},
   {platform:"Newliteracy.online", url:"http://newliteracy.online", cssicon:"web"},
 ];
-export const SITE_TITLE = 'Astro SEO Starterkit SITE_TITLE';
-export const SITE_DESCRIPTION = 'This is the SITE_DESCRTIPTION';
+export const SITE_TITLE = 'Astro SEO Starterkit';
+export const SITE_DESCRIPTION = 'The Astrp SEO Starterkit aims to assist in the creation of content optimized websites';
 export const SITE_URL = 'https://astroseostarterkit.rickpfahl.com';
-export const SITE_KEYWORDS = ['keywordone, keyword2, keyword3'];
-export const SITE_SUBJECT = 'SITE_SUBJECT';
-export const COMPANY_NAME = 'rickpfahlllc';
-export const ADMIN_EMAIL = 'pfahlr@gmail.com';
+export const SITE_KEYWORDS = ['fast page loads', 'structured data','tailwind css','xml-sitemap', 'RSS', 'modern asset formats', 'cloudflare deployment', 'auto SEO', 'web developement', 'digital publishing', 'technology consulting', 'data mining and analysis'];
+export const SITE_SUBJECT = 'I am available to hire for whatever your technological needs, let me help you realize your vision.';
+export const COMPANY_NAME = 'RickPfahlWebDeveloperLLC';
+export const BLOG_DESCRIPTION = 'A 155-160 character description for the blog listing page';
+export const BLOG_KEYWORDS = ['blog syndication RSS', 'SEO metadata']
+export const BLOG_ENABLED = true;
+export const PODCAST_DESCRIPTION = 'A 155-160 character description for the podcast listing page';
+export const PODCAST_KEYWORDS = ['pocast syndication RSS', 'itunes tags'];
+export const PODCAST_ENABLED = true;
+export const ADMIN_EMAIL = 'Rick Pfahl <pfahlr@gmail.com>';
 export const SITE_LANGUAGE = 'EN';
 export const ADSTXTLINE = "google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0";
 export const ROBOTSTXTCONTENT = `User-agent: *
