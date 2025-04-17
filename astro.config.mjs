@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import remarkWebp from './src/plugins/remark-webp.js';
 import cloudflare from '@astrojs/cloudflare';
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,4 +18,10 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkWebp],
   },
+  vite: {
+    plugins: [tailwindcss()],
+//    css: {
+//      transformer: "lightningcss",
+//    },
+  }
 });
