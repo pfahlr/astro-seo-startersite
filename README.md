@@ -23,16 +23,16 @@ TODO:
 ## Implement the following 
 
 - [ ] ensure all meta tags are implemented
-  - [ ] Implemented meta-tags: title, language, description,subject, robots, copyright, author, reply-to, keywords, viewport, url, identifier-url,syndication-source, original-source, og:type,og:url,og:title,og:description,og:image,og:site_name, twitter:card, twitter:url, twitter:title, twitter:description, identifier-urltwitter:image
+  - *Implemented meta-tags*: title, language, description,subject, robots, copyright, author, reply-to, keywords, viewport, url, identifier-url,syndication-source, original-source, og:type,og:url,og:title,og:description,og:image,og:site_name, twitter:card, twitter:url, twitter:title, twitter:description, identifier-urltwitter:image
 - [x] provide RSS feed for blog
 - [x] provide RSS feed for podcast
 - [ ] ensure all social tags and social card images are generated 
-- [ ] add a css framework and clean up markup
+- [ ] add a css framework and clean up markup (having issues getting Tailwind to load)
 - [ ] Truncate page title length to 65 and raise warning if provided value is longer
 - [x] add meta data fields for meta tags keywords and description for all content types
 - [ ] check formatting of page urls that hypens are used rather than underscores, auto replace if possible or raise warning
 - [ ] setup the scripts to auto generate the social media images for each page.
-- [ ] get all required configuration values to be defined in one location if possible. (most are in consts.ts)
+- [x] get all required configuration values to be defined in one location if possible. (consts.ts is the single source of truth)
 - [ ] generate schema.org microdata where appropriate
 - [x] eliminate inline css
 - [ ] eliminate any render blocking resources (probably complete - test)
@@ -52,15 +52,10 @@ TODO:
 
 ## Additional Things I'd Like to Have
 - [ ] A CMS Project CRUD application that validates all markdown metadata fields and creates/edits pages saving them as markdown files and provides git add/rm/mv/commit/push for publishing changes from a demo server. Making editing blogs built with this system and published on cloudflare pages accessible to non-technical people.
-
-- [ ] A script to read new blog entries into chatGPT and get keyword reccommendations / content edits back.
-      
+- [ ] A script to read new blog entries into chatGPT and get keyword reccommendations / content edits back.     
 - [ ] A system to associate with other sites that make up a "content group" where each site is a sort of mirror of the others, but instead of being identical, the sites will be geared towards different audiences. Through the association functionality such as the following might be developed:
-      
 - [ ] A script to read new blog entries into chatGPT and generate variations for each of the audiences specified in this group of sites.
-      
 - [ ] A script to scan content for opportunities to provide additional affiliate marketing links
-      
 - [ ] A script to scan content for links to businesses or opportunities to link to businesses and provide them as a TODO list along with contact information for said businesses, to facillitate obtaining backlinks.
 
     
