@@ -1,5 +1,6 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
+import { removeDupsAndLowerCase } from './utils/functions';
 
 const blog = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -8,19 +9,21 @@ const blog = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		// Transform string to Date object
+		keywords:z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+    // Transform string to Date object
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 	}),
 });
 
-
 const podcast = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    description: z.string(),
     audioUrl: z.string(),
+    keywords: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
     pubDate: z.coerce.date(),
     cover: z.string().optional(),
     explicit: z.boolean().optional(),

@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import PodcastLayout from '../../layouts/PodcastLayout.astro';
 import { optimizeImage } from '../../utils/imageProcessor';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, SITE_KEYWORDS, SITE_SUBJECT, COMPANY_NAME, ADMIN_EMAIL, SITE_LANGUAGE } from '../../consts';
 
 
 export async function getStaticPaths() {
@@ -19,7 +20,7 @@ if(episode.data.cover) {
 }
 
 const { Content } = await episode.render();
-
+console.log(episode.data);
 
 ---
 
@@ -35,6 +36,9 @@ const { Content } = await episode.render();
 	season={episode.data.season}
 	episode={episode.data.episode}
 	id={"card-" + episode.data.episode}
+	keywords={episode.data.keywords}
+	description={episode.description}
+	data={episode.data}
 	>
 	<Content />
 </PodcastLayout>
