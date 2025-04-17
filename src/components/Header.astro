@@ -8,10 +8,10 @@ const { page_title = SITE_TITLE } = Astro.props;
 	<nav>
 		<h2 class="page-title  text-4xl uppercase"><a href="/">{page_title}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			{(BLOG_ENABLED) ? <HeaderLink href="/blog">Blog</HeaderLink> : '' }  
-			{(PODCAST_ENABLED) ? <HeaderLink href="/podcast">Podcast</HeaderLink> : '' }
-			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-300 hover:text-sky">Home</HeaderLink>
+			{(BLOG_ENABLED) ? <HeaderLink href="/blog" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-300 hover:text-sky">Blog</HeaderLink> : '' }  
+			{(PODCAST_ENABLED) ? <HeaderLink href="/podcast" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-300 hover:text-sky">Podcast</HeaderLink> : '' }
+			<HeaderLink href="/about" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-300 hover:text-sky">About</HeaderLink>
 		</div>
 	</nav>
 </header>

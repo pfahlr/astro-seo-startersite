@@ -1,9 +1,11 @@
 ---
 import SocialMedia from './SocialMedia.astro'
 const today = new Date();
+import { COMPANY_NAME } from '../consts';
+
 ---
 <footer>
-	&copy; {today.getFullYear()} Your name here. All rights reserved.
   <SocialMedia/>
+  <h5 class="text-lg">&copy; {today.getFullYear()} {COMPANY_NAME}. All rights reserved.</h5>
 </footer>
 

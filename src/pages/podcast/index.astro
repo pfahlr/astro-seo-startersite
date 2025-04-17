@@ -34,8 +34,8 @@ let data = {
 ---
 <Layout data={data}>	
   <main>
-  <h2>{podcastConfig.name}</h2>
-  <section id="podcast-episodes" class="podcast-episodes">
+  <h3 class="text-2xl">{podcastConfig.name}</h3>
+  <section id="podcast-episodes" class="podcast-episodes flex flex-wrap">
 		{
 			processedEpisodes.map((episode) => (
 			<EpisodeCard
