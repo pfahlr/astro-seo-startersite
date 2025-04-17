@@ -4,6 +4,8 @@
 const {title, cover, desc, url, audioUrl, pubDate, duration, explicit, season, episode, id, keywords, heroImage, description} = Astro.props;
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, SITE_KEYWORDS, SITE_SUBJECT, COMPANY_NAME, ADMIN_EMAIL, SITE_LANGUAGE } from '../consts';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+console.log(Astro.url);
+console.log(Astro.site);
 const image = heroImage;
 ---
 

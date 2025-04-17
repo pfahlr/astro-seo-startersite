@@ -10,7 +10,7 @@ explicit: false
 episode: 1
 season: 1
 episodeType: full
-keywords: ['podcastep1kw1', podcastep1kw2']
+keywords: ['podcastep1kw1', 'podcastep1kw2']
 
 
 ---

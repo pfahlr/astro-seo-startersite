@@ -2,8 +2,11 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import PodcastLayout from '../../layouts/PodcastLayout.astro';
 import { optimizeImage } from '../../utils/imageProcessor';
+import podcastConfig from "../../../podcast.config.json";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import Layout from "../../layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, SITE_KEYWORDS, SITE_SUBJECT, COMPANY_NAME, ADMIN_EMAIL, SITE_LANGUAGE } from '../../consts';
-
 
 export async function getStaticPaths() {
 	const episodes = await getCollection('podcast');
@@ -13,32 +16,34 @@ export async function getStaticPaths() {
 	}));
 }
 
-type Props = CollectionEntry<'podcast'>;
 const episode = Astro.props;
+
 if(episode.data.cover) {
 	episode.data.cover = await optimizeImage(episode.data.cover);
 }
 
 const { Content } = await episode.render();
-console.log(episode.data);
 
+dayjs.extend(localizedFormat);
+episode.data.fulltitle = episode.data.title+"E"+episode.data.episode+"S"+episode.data.season+" | "+podcastConfig.name+" | "+SITE_TITLE+"";
 ---
 
-<PodcastLayout 
-  title={episode.data.title} 
-	cover={episode.data.cover} 
-	desc={episode.body} 
-	url={"/podcast/" + episode.slug} 
-	audioUrl={episode.data.audioUrl}, 
-	pubDate={episode.data.pubDate}
-	duration={episode.data.duration}
-	explicit={episode.data.explicit}
-	season={episode.data.season}
-	episode={episode.data.episode}
-	id={"card-" + episode.data.episode}
-	keywords={episode.data.keywords}
-	description={episode.description}
-	data={episode.data}
-	>
-	<Content />
-</PodcastLayout>
+<Layout data={episode.data}>
+	<PodcastLayout 
+		title={episode.data.fulltitle} 
+		cover={episode.data.cover} 
+		desc={episode.body} 
+		url={"/podcast/" + episode.slug} 
+		audioUrl={episode.data.audioUrl}
+		pubDate={episode.data.pubDate}
+		duration={episode.data.duration}
+		explicit={episode.data.explicit}
+		season={episode.data.season}
+		episode={episode.data.episode}
+		id={"card-" + episode.data.episode}
+		keywords={episode.data.keywords}
+		description={episode.description}
+		data={episode.data}>
+		<Content />
+	</PodcastLayout>
+</Layout>

@@ -10,7 +10,7 @@ explicit: false
 episode: 1
 season: 1
 episodeType: full
-keywords: ['podcastepTWOkw1', podcastepTWOkwTWO']
+keywords: ['podcastepTWOkw1', 'podcastepTWOkwTWO']
 
 ---
 Demo episode 2
