@@ -23,23 +23,27 @@ TODO:
 ## Implement the following 
 
 - [ ] ensure all meta tags are implemented
+  - [ ] Implemented meta-tags: title, language, description,subject, robots, copyright, author, reply-to, keywords, viewport, url, identifier-url,syndication-source, original-source, og:type,og:url,og:title,og:description,og:image,og:site_name, twitter:card, twitter:url, twitter:title, twitter:description, identifier-urltwitter:image
+- [x] provide RSS feed for blog
+- [x] provide RSS feed for podcast
 - [ ] ensure all social tags and social card images are generated 
 - [ ] add a css framework and clean up markup
 - [ ] Truncate page title length to 65 and raise warning if provided value is longer
-- [ ] add meta data fields for meta tags keywords and description for all content types
+- [x] add meta data fields for meta tags keywords and description for all content types
 - [ ] check formatting of page urls that hypens are used rather than underscores, auto replace if possible or raise warning
 - [ ] setup the scripts to auto generate the social media images for each page.
-- [ ] get all required configuration values to be defined in one location if possible.
+- [ ] get all required configuration values to be defined in one location if possible. (most are in consts.ts)
 - [ ] generate schema.org microdata where appropriate
-- [ ] eliminate inline css
-- [ ] eliminate any render blocking resources
-- [ ] automatic generate xml sitemap
-- [ ] supply an ads.txt file
+- [x] eliminate inline css
+- [ ] eliminate any render blocking resources (probably complete - test)
+- [x] automatic generate xml sitemap
+- [x] supply an ads.txt file
+- [x] supply a robots.txt file
 - [ ] provide a complete default favicon set
-- [ ] link rel=canonical on all pages
+- [x] link rel=canonical on all pages
 - [ ] meta tags for Google snippet on all pages
 - [ ] compare this list against multiple SEO checklist sites. there may be more things to do here.
-
+ 
 ## Create the Following Required Documentation Pages
 - [ ] SEO Guidelines for articles/pages
 - [ ] SEO Configuration for Cloudflare
