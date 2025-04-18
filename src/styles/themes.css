@@ -1,5 +1,11 @@
 /* src/styles/themes.css */
-
+:root {
+  --color-bg: #fefcfb;
+  --color-text: #0A1128;
+  --color-accent: #034078;
+  --color-secondary: #1282A2;
+  --color-link: #001F54;
+}
 
 [data-theme='corporate'] {
   --color-bg: #fefcfb;
