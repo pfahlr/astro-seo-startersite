@@ -1,0 +1,21 @@
+---
+// src/components/ThemeToggle.astro
+---
+<select id="themeSwitcher" class="p-2 border rounded">
+  <option value="corporate">Corporate</option>
+  <option value="earthy">Earthy</option>
+  <!-- Add more themes here -->
+</select>
+
+<script is:inline>
+  const themeSwitcher = document.getElementById('themeSwitcher');
+  const currentTheme = localStorage.getItem('theme') || 'corporate';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  themeSwitcher.value = currentTheme;
+
+  themeSwitcher.addEventListener('change', (e) => {
+    const selectedTheme = e.target.value;
+    document.documentElement.setAttribute('data-theme', selectedTheme);
+    localStorage.setItem('theme', selectedTheme);
+  });
+</script>
