@@ -1,5 +1,8 @@
 ---
+
 import Layout from '../../layouts/Layout.astro';
+import HeroBanner from '../../components/HeroBanner.astro';
+
 import PostList from '../../components/PostList.astro';
 import BlogPostCard from '../../components/BlogPostCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, BLOG_DESCRIPTION, BLOG_KEYWORDS} from '../../consts';
@@ -36,12 +39,13 @@ let data = {
 	'description': BLOG_DESCRIPTION,
 	'keywords': BLOG_KEYWORDS
 }
-
+const title = "Welcome to Our Blog";
 ---
 <Layout data={data}>	
-  <PostList> 
+  <HeroBanner title={title} description={BLOG_DESCRIPTION}/>
+	<PostList> 
 	 {processedPosts.map(item => (
-     <BlogPostCard id={item.id} hero={item.data.heroImage} pubdate={item.data.pubDate} title={item.data.title} heroalt={item.data.heroAlt} />
+     <BlogPostCard id={item.id} hero={item.data.heroImage} description={item.data.description} pubdate={item.data.pubDate} title={item.data.title} heroalt={item.data.heroAlt} />
 	 ))}
   </PostList>
 </Layout>
