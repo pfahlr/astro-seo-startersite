@@ -1,0 +1,20 @@
+---
+const { id, hero, title, pubdate, heroalt } = Astro.props;
+import FormattedDate from './FormattedDate.astro';
+
+---
+<li class="box-content p-4 m-4 bg-sky-300">
+  <a href={`/blog/${id}/`}>
+  <section class="post-hero-image">
+    <img width={720} height={360} src={hero} alt="{heroalt}" />
+  </section>
+  <section class="post-title">
+    <h3 class="text-2xl">{title}</h3>
+  </section>
+  <section class="post-date">
+    <span class="text-lg">
+      <FormattedDate date={pubdate} />
+    </span>								
+  </section>		
+  </a>
+</li>

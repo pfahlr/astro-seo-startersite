@@ -3,6 +3,7 @@ title: 'First post'
 description: 'POST_DESCRIPTION'
 pubDate: 'Jul 08 2022'
 heroImage: '/blog-placeholder-3.jpg'
+heroImageAlt: 'hero image alt text'
 keywords: ['1stpostkeyword1', 'firstpostkeyword2','1stpostkww3']
 updatedDate: 'Apr 10 2025'
 ---

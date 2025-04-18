@@ -14,6 +14,7 @@ const blog = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
 	}),
 });
 
@@ -26,6 +27,7 @@ const podcast = defineCollection({
     keywords: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
     pubDate: z.coerce.date(),
     cover: z.string().optional(),
+    coverAlt: z.string().optional(),
     explicit: z.boolean().optional(),
     episode: z.number().optional(),
     season: z.number().optional(),

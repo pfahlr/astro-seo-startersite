@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PostList from '../../components/PostList.astro';
 import EpisodeCard from '../../components/EpisodeCard.astro';
 import { getCollection } from 'astro:content';
 import podcastConfig from "../../../podcast.config.json";
@@ -33,14 +34,13 @@ let data = {
 
 ---
 <Layout data={data}>	
-  <main>
-  <h3 class="text-2xl">{podcastConfig.name}</h3>
-  <section id="podcast-episodes" class="podcast-episodes flex flex-wrap">
+ <PostList>
 		{
 			processedEpisodes.map((episode) => (
 			<EpisodeCard
 				title={episode.data.title}
 				cover={episode.data.cover}
+				coveralt={episode.data.coverAlt}
 				desc={htmlToText(episode.body.slice(0, 500))}
 				url={"/podcast/" + episode.slug}
 				audioUrl={episode.data.audioUrl}
@@ -50,5 +50,5 @@ let data = {
 			/>
 			))
 		}
-</section>
+</PostList>
 </Layout>

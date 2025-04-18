@@ -1,5 +1,5 @@
 ---
-const { title, cover, desc, url, audioUrl, id, pubDate, duration, explicit, episode, season } = Astro.props;
+const { title, cover, coveralt, desc, url, audioUrl, id, pubDate, duration, explicit, episode, season } = Astro.props;
 import podcastConfig from "../../podcast.config.json";
 import MediaEnclosure from "../components/MediaEnclosure.astro";
 import formatTime  from "../modules/field_formatter.js";
@@ -13,19 +13,19 @@ const durationFormatted = formatTime(duration);
 
 const epidodeInfoClasses = "episode-info" + " " + (explicit ? "episode-explicit" : "");
 ---
-<article class=`episode-card e${episode}s${season} box-content p-4 m-4 bg-sky-300 `>
+<li class="box-content p-4 m-4 bg-sky-300">
   <section class="cover-image">
-    <img src={coverURL} alt={title} width={720} class="" />
+    <a href={url}><img width={720} height={360} src={coverURL} alt={coveralt} /></a>
   </section>
   <section class={epidodeInfoClasses}>
-    <a href={url} class="episode-link">
-      <h3 class="text-2xl episode-title">{title}</h3>
+    <a href={url}>
+      <h3 class="text-2xl">{title}</h3>
     </a>
-    <div class="epidsode-date" class="text-lg"><strong>published date: </strong>{dateFormatted}</div>
-    <div class="epidsode-duration" class="text-lg"><strong>duration: </strong>{durationFormatted} </div>
-    <div class="episode-description" class="text-lg">{desc}</div>
+    <div class="text-lg"><strong>published date: </strong>{dateFormatted}</div>
+    <div class="text-lg"><strong>duration: </strong>{durationFormatted} </div>
+    <div class="text-lg">{desc}</div>
   </section>
-  <section class="episode-enclosure" >
+  <section class="episode-enclosure">
      <MediaEnclosure audioUrl={audioUrl} id={id} />
   </section>
-</article>
+</li>
