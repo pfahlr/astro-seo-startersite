@@ -1,10 +1,33 @@
 /* src/styles/themes.css */
+
 :root {
   --color-bg: #fefcfb;
   --color-text: #0A1128;
   --color-accent: #034078;
   --color-secondary: #1282A2;
-  --color-link: #001F54;
+  --color-link: #001F54; 
+  --caribbean-current: #006466ff;
+  --midnight-green: #065a60ff;
+  --midnight-green-2: #0b525bff;
+  --midnight-green-3: #144552ff;
+  --charcoal: #1b3a4bff;
+  --prussian-blue: #212f45ff;
+  --space-cadet: #272640ff;
+  --dark-purple: #312244ff;
+  --dark-purple-2: #3e1f47ff;
+  --palatinate: #4d194dff;
+
+
+  --color-bg:var(--dark-purple);
+  --color-panel:var(--dark-purple-2);
+  --color-text-title:var(--caribbean-current);
+  --color-text-head:var(--palatinate);
+  --color-text:var(--midnight-green);
+  --color-highlight:var(--space-cadet);
+  --color-link:var(--charcoal);
+  --color-link-hover:var(--prussian-blue);
+  --color-accent:var(--midnight-green-2);
+  --color-secondary:var(--midnight-green-3);
 }
 
 [data-theme='corporate'] {
@@ -24,3 +47,6 @@
 }
 
 /* Add other themes here */
+
+[data-theme='inyourface'] {
+}

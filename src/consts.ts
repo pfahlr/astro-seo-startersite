@@ -7,6 +7,7 @@ export const SOCIAL_MEDIA = [{platform:"X", url:"https://x.com/pfahlr", cssicon:
   {platform:"RickPfahl.com", url:"http://rickpfahl.com", cssicon:"web"},
   {platform:"Newliteracy.online", url:"http://newliteracy.online", cssicon:"web"},
 ];
+export const LANG = 'en_US';
 export const SITE_TITLE = 'Astro SEO Starterkit';
 export const SITE_DESCRIPTION = 'The Astrp SEO Starterkit aims to assist in the creation of content optimized websites';
 export const SITE_URL = 'https://astroseostarterkit.rickpfahl.com';

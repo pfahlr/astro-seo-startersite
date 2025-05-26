@@ -2,17 +2,19 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { SITE_LANGUAGE } from '../consts.ts';
 const { data } = Astro.props;
-import '../styles/global.css'
+import '../styles/global.css';
+import '../styles/global.scss';
 ---
 <!DOCTYPE html>
-<html>
+<html lang={SITE_LANGUAGE} class="bg-color-bg text-color-text" >
   <head>
     <BaseHead {...data}/>
   </head>
   <body>
 	  <Header />
-	  <main>
+	  <main class="mx-auto max-w-7xl bg-color-panel">
       <slot/>
   	</main>
 	  <Footer />

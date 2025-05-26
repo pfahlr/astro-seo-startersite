@@ -20,7 +20,7 @@ type Props = CollectionEntry<'blog'>;
 const post = Astro.props;
 
 if(post.data.heroImage) {
-	post.data.heroImage = await optimizeImage(post.data.heroImage);
+	post.data.heroImageOptimized = await optimizeImage(post.data.heroImage, 1280, 720);
 }
 
 console.log(post.data);

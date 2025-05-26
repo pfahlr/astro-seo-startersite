@@ -2,10 +2,10 @@ t---
 import FormattedDate from '../components/FormattedDate.astro';
 const { data } = Astro.props;
 ---
-<article class="grid grid-flow-row-dense grid-cols-3 grid-rows-3">
+<article class="">
 	<section class="prose" class="col-span-3">
-	  <div class="box-content p-4 m-4 bg-sky-300" >
-		  {data.heroImage && <img width={1020} src={data.heroImage} alt=""  class="inline"/>}
+	  <div class="box-content bg-sky-300" >
+		  {data.heroImage && <img  src={data.heroImageOptimized} alt=""  class="inline"/>}
 	  </div>
 		<div class="title">
 			<div class="date text-lg">

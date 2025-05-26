@@ -13,18 +13,18 @@ const durationFormatted = formatTime(duration);
 
 const epidodeInfoClasses = "episode-info" + " " + (explicit ? "episode-explicit" : "");
 ---
-<div class="bg-white shadow rounded p-4 border border-theme-secondary">
+<div class="bg-accent shadow rounded p-4 border border-theme-secondary">
   <section class="cover-image">
     <a href={url}><img width={720} height={360} src={coverURL} alt={coveralt} /></a>
   </section>
   <section class={epidodeInfoClasses}>
-    <a href={url}>
+    <a class="text-link hover:text-link-hover" href={url}>
       <h3 class="text-xl font-semibold text-theme-text mb-2">{title}</h3>
     </a>
     <div class="text-sm text-theme-text">
     <div><strong>published date: </strong>{dateFormatted}</div>
     <div><strong>duration: </strong>{durationFormatted}</div>
-    <div>{desc}</div>
+    <div class="text-accent">{desc}</div>
     </div>
   </section>
   <section class="episode-enclosure">

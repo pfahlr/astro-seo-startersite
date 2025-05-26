@@ -19,7 +19,7 @@ let processedPosts:any = [];
 async function preprocessPosts(posts) {
     for (const post of posts) {
     if (post.data.heroImage) {
-      post.data.heroImage = await optimizeImage(post.data.heroImage);
+      post.data.heroImage = await optimizeImage(post.data.heroImage,720,360);
     }
   }
 	return posts;
