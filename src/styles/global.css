@@ -2,3 +2,120 @@
 
 @import "tailwindcss";
 @import './themes.css';
+
+.text-color-text-title {
+  color:var(--color-text-title);
+}
+.text-color-text-head {
+  color:var(--color-text-head);
+}
+
+.bg-color-bg {
+  background-color: var(--color-bg);
+}
+.bg-color-panel {
+  background-color: var(--color-panel);
+}
+
+.bg-color-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-color-highlight {
+  background-color: var(--color-highlight);
+}
+
+.bg-color-secondary {
+  background-color: var(--color-secondary);
+}
+
+.hover\:text-color-text-title {
+    &:hover {
+      @media (hover: hover) {
+       color: var(--color-text-title);
+      }
+    }
+  }
+.hover\:text-color-text-head {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-text-head);
+      }
+    }
+  }
+
+
+.hover\:bg-bg {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-bg);
+      }
+    }
+  }
+.hover\:bg-accent {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-accent);
+      }
+    }
+  }
+.hover\:bg-panel {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-panel);
+      }
+    }
+  }
+.hover\:bg-highlight {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-highlight);
+      }
+    }
+  }
+.hover\:bg-secondary {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+
+ 
+h1,h2,h3,h4,h5,h6,h7,h8,h9 {
+  @apply  mb-4;
+}
+
+.post h1 { @apply text-4xl; }
+.post h2 { @apply text-3xl; }
+.post h3 { @apply text-2xl; }
+.post h4 { @apply text-xl; }
+.post h5 { @apply text-lg; }
+.post h6 { @apply text-base; }
+.post h7 { @apply text-sm; }
+.post h8 { @apply text-xs; }
+.post h9 { @apply text-xs; }
+
+@media (min-width: 768px) {
+ h1 { @apply text-5xl; }
+.post h2 { @apply text-4xl; }
+.post h3 { @apply text-3xl; }
+.post h4 { @apply text-2xl; }
+.post h5 { @apply text-xl; }
+.post h6 { @apply text-lg; }
+.post h7 { @apply text-base; }
+.post h8 { @apply text-sm; }
+.post h9 { @apply text-xs; }
+
+}
+@media (min-width: 1024px) {
+.post h1 { @apply text-6xl; }
+.post h2 { @apply text-5xl; }
+.post h3 { @apply text-4xl; }
+.post h4 { @apply text-3xl; }
+.post h5 { @apply text-2xl; }
+.post h6 { @apply text-xl; }
+.post h7 { @apply text-lg; }
+.post h8 { @apply text-base; }
+.post h9 { @apply text-sm; }
+}

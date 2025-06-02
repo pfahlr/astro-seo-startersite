@@ -5,7 +5,7 @@ audioUrl: https://example.com/media/episode1.mp3
 pubDate: April 10 2025
 duration: '45:00'
 size: 1
-cover: '/blog-placeholder-1.png'
+cover: '/blog-placeholder-5.jpg'
 explicit: false
 episode: 1
 season: 1

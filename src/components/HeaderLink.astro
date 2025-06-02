@@ -8,7 +8,7 @@ const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
 const subpath = pathname.match(/[^\/]+/g);
 const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 ---
-<a class="text-link hover:text-link-hover" href={href} class:list={[className, { active: isActive }]} {...props}>
+<a class="rounded-md px-3 py-2 text-sm font-medium  hover:bg-accent" href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
 

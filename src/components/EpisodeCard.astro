@@ -13,9 +13,9 @@ const durationFormatted = formatTime(duration);
 
 const epidodeInfoClasses = "episode-info" + " " + (explicit ? "episode-explicit" : "");
 ---
-<div class="bg-accent shadow rounded p-4 border border-theme-secondary">
+<div class="bg-color-highlight shadow rounded p-4 border border-theme-secondary">
   <section class="cover-image">
-    <a href={url}><img width={720} height={360} src={coverURL} alt={coveralt} /></a>
+    <a href={url}><img src={coverURL} alt={coveralt} /></a>
   </section>
   <section class={epidodeInfoClasses}>
     <a class="text-link hover:text-link-hover" href={url}>

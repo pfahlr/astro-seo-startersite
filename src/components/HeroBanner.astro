@@ -3,8 +3,8 @@
 const { title, description, ctaText="Expore Posts", ctaLink="/blog/" } = Astro.props;
 ---
 
-<section class="bg-theme-bg text-theme-text py-12 text-center border-b border-theme-secondary">
-  <h2 class="text-4xl font-bold mb-4 text-title">{title}</h2>
+<section class="bg-color-accent text-theme-text py-12 text-center mb-4 border-theme-secondary">
+  <h2 class="text-4xl font-bold mb-4 text-text-title">{title}</h2>
   <p class="text-lg mb-6 text-accent">{description}</p>
   <button class="rounded text-bg bg-accent py-6 px6"  >
     <a class="px-4 py-2 block  font-semibold" href={ctaLink}>{ctaText}</a>
