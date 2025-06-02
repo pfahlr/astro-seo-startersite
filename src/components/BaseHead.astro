@@ -24,8 +24,8 @@ const image = heroImage;
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
+<title>{title ? title : SITE_TITLE}</title>
+<meta name="title" content={title ? title : SITE_TITLE} />
 <meta name='language' content={SITE_LANGUAGE} />
 <meta name="description" content={description ? description : SITE_DESCRIPTION} />
 <meta name="subject" content={SITE_SUBJECT} />

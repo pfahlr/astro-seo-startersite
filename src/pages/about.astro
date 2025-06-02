@@ -1,13 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
+const title = "About | "+ SITE_TITLE
+var data = {title: title};
 ---
 
-<Layout>
+
+<Layout data={data}>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium ultricies risus in sagittis. Vivamus efficitur turpis quis enim fringilla laoreet. Praesent vitae velit convallis, aliquet velit ac, viverra magna. Vestibulum tincidunt odio neque, ornare laoreet velit pretium quis. Sed hendrerit, tortor quis mollis tincidunt, risus massa ullamcorper turpis, viverra vehicula purus nisi sed elit. Cras sagittis et ligula ac convallis. Nullam interdum, nisi sed congue commodo, lacus dui dignissim nisl, ut tristique lorem lorem nec metus. Praesent urna dui, sagittis eu est eu, malesuada viverra lacus.
 

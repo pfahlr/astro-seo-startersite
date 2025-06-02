@@ -5,8 +5,8 @@
   --color-text-head:var(--color-prussian-blue-900);
   --color-text:var(--color-space-cadet-800);
   --color-highlight:var(--color-prussian-blue-400);
-  --color-link:var(--color-prussian-blue-700);
-  --color-link-hover:var(--color-space-cadet-800);
+  --color-link:var(--color-prussian-blue-900);
+  --color-link-hover:var(--color-space-cadet-900);
   --color-accent:var(--color-space-cadet-300);
   --color-secondary:var(--color-dark-purple);
   --color-text-title:var(--color-palatinate-700);
@@ -20,8 +20,8 @@
   --color-text-head:var(--color-prussian-blue-900);
   --color-text:var(--color-space-cadet-800);
   --color-highlight:var(--color-prussian-blue-400);
-  --color-link:var(--color-prussian-blue-700);
-  --color-link-hover:var(--color-space-cadet-800);
+  --color-link:var(--color-prussian-blue-900);
+  --color-link-hover:var(--color-space-cadet-900);
   --color-accent:var(--color-space-cadet-300);
   --color-secondary:var(--color-dark-purple);
   --color-text-title:var(--color-palatinate-700);
