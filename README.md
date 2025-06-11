@@ -18,31 +18,33 @@ npm run deploy  #deploys the site to cloudflare pages, will open up a browser wi
 So far we have:
 - [x] - all images are run through an optimization function where they are converted to webp
 - [x] - blogs and podcasts generate rss feeds
-
-TODO: 
-## Implement the following 
-
-- [ ] ensure all meta tags are implemented
-  - *Implemented meta-tags*: title, language, description,subject, robots, copyright, author, reply-to, keywords, viewport, url, identifier-url,syndication-source, original-source, og:type,og:url,og:title,og:description,og:image,og:site_name, twitter:card, twitter:url, twitter:title, twitter:description, identifier-urltwitter:image
+- [x] come up with a set of colors that will vary by theme 
 - [x] provide RSS feed for blog
 - [x] provide RSS feed for podcast
-- [ ] ensure all social tags and social card images are generated 
-- [ ] add a css framework and clean up markup (having issues getting Tailwind to load)
-- [ ] Truncate page title length to 65 and raise warning if provided value is longer
+- [x] add a css framework Tailwind 4.x
+- [x] process all images inline and attached in metadata as webp 
 - [x] add meta data fields for meta tags keywords and description for all content types
-- [ ] check formatting of page urls that hypens are used rather than underscores, auto replace if possible or raise warning
-- [ ] setup the scripts to auto generate the social media images for each page.
 - [x] get all required configuration values to be defined in one location if possible. (consts.ts is the single source of truth)
-- [ ] generate schema.org microdata where appropriate
 - [x] eliminate inline css
-- [ ] eliminate any render blocking resources (probably complete - test)
+- [x] eliminate any render blocking resources
 - [x] automatic generate xml sitemap
 - [x] supply an ads.txt file
 - [x] supply a robots.txt file
-- [ ] provide a complete default favicon set
 - [x] link rel=canonical on all pages
+
+TODO: 
+## Implement the following 
+- [ ] ensure all social tags and social card images are generated 
+- [ ] clean up configuration variables/templates
+- [ ] Truncate page title length to 65 and raise warning if provided value is longer
+- [ ] check formatting of page urls that hypens are used rather than underscores, auto replace if possible or raise warning
+- [ ] setup the scripts to auto generate the social media images for each page.
+- [ ] generate schema.org microdata where appropriate
+- [ ] provide a complete default favicon set, generate them automatically from a single svg or png provided by user
 - [ ] meta tags for Google snippet on all pages
 - [ ] compare this list against multiple SEO checklist sites. there may be more things to do here.
+- [ ] ensure all meta tags are implemented
+  - *Implemented meta-tags*: title, language, description,subject, robots, copyright, author, reply-to, keywords, viewport, url, identifier-url,syndication-source, original-source, og:type,og:url,og:title,og:description,og:image,og:site_name, twitter:card, twitter:url, twitter:title, twitter:description, identifier-urltwitter:image
  
 ## Create the Following Required Documentation Pages
 - [ ] SEO Guidelines for articles/pages
