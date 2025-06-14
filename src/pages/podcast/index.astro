@@ -7,7 +7,7 @@ import PostList from '../../components/PostList.astro';
 import EpisodeCard from '../../components/EpisodeCard.astro';
 import { getCollection } from 'astro:content';
 import podcastConfig from "../../../podcast.config.json";
-import { SITE_TITLE, SITE_DESCRIPTION, PODCAST_DESCRIPTION, PODCAST_KEYWORDS} from '../../consts';
+import { SITE_INFO } from '../../consts';
 import { htmlToText } from 'html-to-text';
 import { optimizeImage } from '../../utils/imageProcessor';
 
@@ -30,14 +30,14 @@ async function preprocessPosts(posts) {
 
 processedEpisodes = await preprocessPosts(episodes); 
 let data = {
-	'title':` ${podcastConfig.name} | ${SITE_TITLE}`,
-	'description': PODCAST_DESCRIPTION,
-	'keywords': PODCAST_KEYWORDS
+	'title':` ${podcastConfig.name} | ${SITE_INFO.site_title}`,
+	'description': SITE_INFO.podcast_description,
+	'keywords': SITE_INFO.podcast_keywords
 }
 
 ---
 <Layout data={data}>
-<HeroBanner title="Welcome to Our Podcast" desc={PODCAST_DESCRIPTION}/>
+<HeroBanner title="Welcome to Our Podcast" desc={SITE_INFO.podcast_description}/>
  <PostList>
 		{
 			processedEpisodes.map((episode) => (

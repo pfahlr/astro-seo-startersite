@@ -1,11 +1,10 @@
 ---
-
 import Layout from '../../layouts/Layout.astro';
 import HeroBanner from '../../components/HeroBanner.astro';
 
 import PostList from '../../components/PostList.astro';
 import BlogPostCard from '../../components/BlogPostCard.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, BLOG_DESCRIPTION, BLOG_KEYWORDS} from '../../consts';
+import { SITE_INFO } from '../../consts';
 import { optimizeImage } from '../../utils/imageProcessor';
 import { getCollection } from 'astro:content';
 
@@ -35,14 +34,14 @@ async function preprocessPosts(posts) {
 processedPosts = await preprocessPosts(posts); 
 
 let data = {
-	'title':SITE_TITLE,
-	'description': BLOG_DESCRIPTION,
-	'keywords': BLOG_KEYWORDS
+	'title':SITE_INFO.site_title,
+	'description': SITE_INFO.blog_description,
+	'keywords': SITE_INFO.blog_keywords
 }
 const title = "Welcome to Our Blog";
 ---
 <Layout data={data}>	
-  <HeroBanner title={title} description={BLOG_DESCRIPTION}/>
+  <HeroBanner title={title} description={SITE_INFO.blog_description}/>
 	<PostList> 
 	 {processedPosts.map(item => (
      <BlogPostCard id={item.id} hero={item.data.heroImage} description={item.data.description} pubdate={item.data.pubDate} title={item.data.title} heroalt={item.data.heroAlt} />

@@ -3,8 +3,6 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import BlogPost from '../../layouts/BlogPost.astro';
 import { optimizeImage } from '../../utils/imageProcessor';
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, SITE_KEYWORDS, SITE_SUBJECT, COMPANY_NAME, ADMIN_EMAIL, SITE_LANGUAGE } from '../../consts';
-
 import { render } from 'astro:content';
 
 export async function getStaticPaths() {

@@ -1,11 +1,11 @@
 ---
 import SocialMedia from './SocialMedia.astro'
 const today = new Date();
-import { COMPANY_NAME } from '../consts';
+import { SITE_INFO } from '../consts';
 
 ---
 <footer class="mx-auto max-w-7xl bg-color-panel p-4">
   <SocialMedia/>
-  <div class="text-sm">&copy; {today.getFullYear()} {COMPANY_NAME}. All rights reserved.</div>
+  <div class="text-sm">&copy; {today.getFullYear()} {SITE_INFO.company_name}. All rights reserved.</div>
 </footer>
 
