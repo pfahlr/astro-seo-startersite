@@ -1,8 +1,9 @@
 ---
-const {title, cover, desc, url, audioUrl, pubDate, duration, explicit, season, episode, id, keywords, heroImage, description} = Astro.props;
+const { heroImage, description, title, cover, desc, url, audioUrl, pubDate, duration, explicit, season, episode, id, keywords } = Astro.props;
 import { SITE_INFO } from '../consts';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const image = heroImage;
+console.log(title);
 ---
 
 <!-- Global Metadata -->
@@ -24,10 +25,10 @@ const image = heroImage;
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title ? title : SITE_INFO.site_title}</title>
-<meta name="title" content={title ? title : SITE_INFO.site_title} />
+<title>{(title != '') ? title : SITE_INFO.site_title}</title>
+<meta name="title" content={(title != '') ? title : SITE_INFO.site_title} />
 <meta name='language' content={SITE_INFO.site_language} />
-<meta name="description" content={description ? description : SITE_INFO.site_description} />
+<meta name="description" content={(description != '') ? description : SITE_INFO.site_description} />
 <meta name="subject" content={SITE_INFO.site_subject} />
 <meta name='robots' content='index,follow' />
 <meta name='copyright' content={SITE_INFO.company_name} />
@@ -44,14 +45,14 @@ const image = heroImage;
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:title" content={(title != '') ? title : SITE_INFO.site_title} />
+<meta property="og:description" content={(description != '')  ? description : SITE_INFO.site_description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 <meta property="og:site_name" content={SITE_INFO.site_title}/>
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
+<meta property="twitter:title" content={(title != '')  ? title : SITE_INFO.site_title}/>
+<meta property="twitter:description" content={(description != '')  ? description : SITE_INFO.site_description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
