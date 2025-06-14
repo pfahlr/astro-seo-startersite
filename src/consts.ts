@@ -27,7 +27,7 @@ export const SITE_INFO = {
   'robotstxtcontent': `User-agent: *
 Allow: /
 
-Sitemap: `+SITE_URL+`/sitemap.xml
+Sitemap: https://astroseostarterkit.rickpfahl.com/sitemap.xml
 `,
  
 }

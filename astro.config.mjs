@@ -7,11 +7,11 @@ import remarkWebp from './src/plugins/remark-webp.js';
 import cloudflare from '@astrojs/cloudflare';
 import minify from 'astro-min';
 
-import { SITE_URL } from './src/consts';
+import { SITE_INFO } from './src/consts';
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE_URL,
+  site: SITE_INFO.site_url,
   integrations: [mdx(), sitemap(), 
     /*minify({
       /*
@@ -21,7 +21,7 @@ export default defineConfig({
        keep_comments: false,
        keep_html_and_head_opening_tags: false,
        keep_input_type_text_attr: false,
-       keep_spaces_between_attributes: false,
+       keep_spaces_between_attributes: false, 
        keep_ssi_comments: false,
        minify_css: true,
        minify_js: true,
