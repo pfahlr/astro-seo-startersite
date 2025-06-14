@@ -1,7 +1,7 @@
-import { ADSTXTLINE } from '../consts';
+import { SITE_INFO } from '../consts';
 
 export async function GET() {
-  var content = new Response(ADSTXTLINE);
+  var content = new Response(SITE_INFO.adstxtline);
   content.headers.set('Content-Type', 'text/plain');
   return content;
 }

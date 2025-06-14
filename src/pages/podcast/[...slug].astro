@@ -6,7 +6,7 @@ import podcastConfig from "../../../podcast.config.json";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import Layout from "../../layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, SITE_KEYWORDS, SITE_SUBJECT, COMPANY_NAME, ADMIN_EMAIL, SITE_LANGUAGE } from '../../consts';
+import { SITE_INFO } from '../../consts';
 
 export async function getStaticPaths() {
 	const episodes = await getCollection('podcast');
@@ -25,7 +25,7 @@ if(episode.data.cover) {
 const { Content } = await episode.render();
 
 dayjs.extend(localizedFormat);
-episode.data.fulltitle = episode.data.title+"E"+episode.data.episode+"S"+episode.data.season+" | "+podcastConfig.name+" | "+SITE_TITLE+"";
+episode.data.fulltitle = episode.data.title+"E"+episode.data.episode+"S"+episode.data.season+" | "+podcastConfig.name+" | "+SITE_INFO.site_title+"";
 ---
 
 <Layout data={episode.data}>
